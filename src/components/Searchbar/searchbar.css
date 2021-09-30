@@ -1,0 +1,50 @@
+.searchbar {
+  margin: 50px auto;
+
+  width: 70%;
+}
+
+.form__controls {
+  display: flex;
+  align-items: center;
+}
+.form__input,
+.btn__form {
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 1.0666666667rem;
+  padding: 0.5333333333rem;
+  border: 1px solid #cacaca;
+}
+
+.form__input {
+  flex: 3;
+  border-radius: 2rem 0 0 2rem;
+  background-color: #f4f4f4;
+  box-shadow: inset 0 1px 2px rgb(10 10 10 / 10%);
+  color: #3f3f3f;
+  padding-left: 20px;
+  transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+}
+
+.btn.btn__form {
+  flex: 1;
+  border-radius: 0 2rem 2rem 0;
+  display: inline-block;
+  background-color: #3c948b;
+  color: #fff;
+  margin: 0;
+}
+
+.btn__form:hover {
+  background-color: #5abbb1;
+}
+
+.btn__form:active {
+  transform: scale(0.99);
+}
+
+.form__controls > input:focus {
+  border: 1px solid 3c948b;
+  box-shadow: 0 0 1px 1px rgba(60, 148, 139, 0.5);
+}

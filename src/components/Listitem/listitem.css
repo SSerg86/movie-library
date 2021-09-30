@@ -1,0 +1,36 @@
+.listitem {
+  text-decoration: none;
+  width: 210px;
+  background: #f4f4f4;
+  box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1),
+    0 3px 1px 0 rgba(20, 23, 28, 0.1);
+  margin: 1rem auto;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.listitem:hover {
+  transform: scale(1.03);
+}
+
+.listitem img {
+  width: 210px;
+  height: 295px;
+  object-fit: cover;
+}
+
+.listitem__info {
+  min-height: 80px;
+  color: #3f3f3f;
+  text-align: center;
+}
+
+.info__name {
+  font-size: 1rem;
+  padding: 5px;
+}
+
+.info__rating {
+  color: #3c948b;
+  padding: 10px;
+}

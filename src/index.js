@@ -4,14 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// STATE
+import ShowsState from './context/shows/ShowsState';
+import AlertState from './context/alerts/AlertsState';
+import { AuthContextProvider } from './context/auth/authContext';
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <AuthContextProvider>
+    <ShowsState>
+      <AlertState>
+        <App />
+      </AlertState>
+    </ShowsState>
+  </AuthContextProvider>,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

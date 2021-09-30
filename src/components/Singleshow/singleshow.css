@@ -1,0 +1,69 @@
+.singlefilm {
+  margin: 2rem 0;
+  display: flex;
+}
+
+.singlefilm__general {
+  display: flex;
+}
+
+/* .singlefilm__info {
+    flex: 1;
+  } */
+
+.general__aside {
+  margin-right: 2rem;
+}
+
+.general__aside img {
+  width: 210px;
+  height: 295px;
+  object-fit: cover;
+}
+
+.aside__button {
+  text-align: center;
+  background-color: #3c948b;
+  padding: 10px 0;
+  cursor: pointer;
+  color: #f4f4f4;
+  font-size: 0.75rem;
+  margin-top: -3px;
+}
+
+.aside__button:hover {
+  background-color: #30746d;
+}
+
+.general__article {
+  max-width: 70%;
+}
+
+.general__article p {
+  margin: 1rem 0;
+}
+
+.general__genre {
+  display: inline-block;
+  border-radius: 15px;
+  margin: 0.5rem 1rem 0.5rem 0;
+  padding: 10px 17px;
+  background: #3c948b;
+  color: #f4f4f4;
+}
+
+.general__article p:last-child {
+  max-height: 180px;
+  overflow: scroll;
+}
+
+.fas {
+  color: #f4f4f4;
+}
+.heart {
+  color: red;
+}
+
+.hidden {
+  display: none;
+}
