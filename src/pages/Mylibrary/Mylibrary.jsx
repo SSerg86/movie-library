@@ -66,7 +66,7 @@ const Mylibrary = () => {
             id={item.id}
             image={item.image ? item.image.medium : null}
             name={item.name}
-            rating={item.rating.average ? item.rating.average : 'No rating'}
+            rating={item.rating ? item.rating.average : 'No rating'}
           />
         ))}
       </div>
