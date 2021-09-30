@@ -2,24 +2,24 @@ import { useState, useEffect, useCallback } from 'react';
 import axios from '../../axios';
 
 import Listitem from '../../components/Listitem/Listitem';
-import Genrelist from '../../components/Genrelist/Genrelist';
+// import Genrelist from '../../components/Genrelist/Genrelist';
 
 const Mylibrary = () => {
   const [myShows, setMyShows] = useState([]);
-  const [genres, setGenres] = useState([]);
+  // const [genres, setGenres] = useState([]);
 
-  const getGenresList = (data) => {
-    const setOfGenres = new Set();
-    const uniqueGenres = [];
-    data
-      .filter((el) => el.genre !== undefined && el.genre.length > 0)
-      .map((el) => el.genre)
-      .forEach((genre) => genre.forEach((el) => setOfGenres.add(el)));
+  // const getGenresList = (data) => {
+  //   const setOfGenres = new Set();
+  //   const uniqueGenres = [];
+  //   data
+  //     .filter((el) => el.genre !== undefined && el.genre.length > 0)
+  //     .map((el) => el.genre)
+  //     .forEach((genre) => genre.forEach((el) => setOfGenres.add(el)));
 
-    setOfGenres.forEach((value) => uniqueGenres.push(value));
+  //   setOfGenres.forEach((value) => uniqueGenres.push(value));
 
-    return uniqueGenres;
-  };
+  //   return uniqueGenres;
+  // };
 
   const fetchData = useCallback(async () => {
     const response = await axios.get(
@@ -44,7 +44,7 @@ const Mylibrary = () => {
     }
 
     setMyShows(loadedShows);
-    setGenres(getGenresList(loadedShows));
+    // setGenres(getGenresList(loadedShows));
   }, []);
 
   useEffect(() => {
