@@ -46,7 +46,7 @@ const Homepage = () => {
   return (
     <div className="homepage">
       <h1 style={{ textAlign: 'center', marginTop: '30px' }}>
-        Todays Shows in UK
+        Todays Shows in the UK
       </h1>
       <ul className="genres-list">
         <Genrelist
@@ -56,7 +56,7 @@ const Homepage = () => {
         />
       </ul>
       <div className="item-grid">
-        {todaysShows.map((item, index) => (
+        {todaysShows.map((item) => (
           <Listitem
             key={item.id}
             id={item.show.id}
