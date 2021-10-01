@@ -59,17 +59,23 @@ const Mylibrary = () => {
       {/* <ul className="genres-list">
         <Genrelist genres={genres} />
       </ul> */}
-      <div className="item-grid">
-        {myShows.map((item, index) => (
-          <Listitem
-            key={item.id + index}
-            id={item.id}
-            image={item.image ? item.image.medium : null}
-            name={item.name}
-            rating={item.rating ? item.rating.average : 'No rating'}
-          />
-        ))}
-      </div>
+      {myShows.length <= 0 ? (
+        <h3 style={{ textAlign: 'center', marginTop: '50px' }}>
+          You haven't chosen your favourite show yet
+        </h3>
+      ) : (
+        <div className="item-grid">
+          {myShows.map((item, index) => (
+            <Listitem
+              key={item.id + index}
+              id={item.id}
+              image={item.image ? item.image.medium : null}
+              name={item.name}
+              rating={item.rating ? item.rating.average : 'No rating'}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
