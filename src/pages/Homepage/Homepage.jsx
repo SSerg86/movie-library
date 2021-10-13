@@ -33,10 +33,17 @@ const Homepage = () => {
     setGenres(getGenresList(request.data));
   }, []);
 
-  const filteredGenre = (genre) => {
-    setSelectedGenre(genre);
-
-    setTodaysShows(todaysShows.filter((el) => el.show.genres.includes(genre)));
+  const filteredGenre = (genre, isChecked) => {
+    console.log(genre, isChecked);
+    if (isChecked) {
+      setSelectedGenre(genre);
+      setGenres([genre]);
+      setTodaysShows(
+        todaysShows.filter((el) => el.show.genres.includes(genre))
+      );
+    } else {
+      fetchData();
+    }
   };
 
   useEffect(() => {

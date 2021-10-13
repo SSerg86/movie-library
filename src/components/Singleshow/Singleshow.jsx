@@ -1,5 +1,6 @@
 import './singleshow.css';
 import variables from '../../Var/variables';
+import { useState } from 'react';
 
 const Singleshow = ({
   image,
@@ -19,6 +20,8 @@ const Singleshow = ({
     }
     return text.replace(/(<([^>]+)>)/gi, '');
   };
+
+  const [heartState, setHeartState] = useState('false');
 
   async function addMovieHandler() {
     const movie = {
@@ -45,6 +48,7 @@ const Singleshow = ({
 
     const data = await response.json();
     console.log(data);
+    setHeartState(!heartState);
     alert('Movie was added succefully');
   }
 
@@ -59,14 +63,17 @@ const Singleshow = ({
             />
 
             <div className="aside__button" onClick={addMovieHandler}>
-              <span className="follow-toggle ">
-                <i className="fas fa-heart "></i>
-                <span className="hide-for-small-only"> Follow</span>
-              </span>
-              <span className="follow-toggle hidden">
-                <i className="fas fa-heart heart"></i>
-                <span className="hide-for-small-only"> Follow</span>
-              </span>
+              {!heartState ? (
+                <span className="follow-toggle ">
+                  <i className="fas fa-heart "></i>
+                  <span className="hide-for-small-only"> Follow</span>
+                </span>
+              ) : (
+                <span className="follow-toggle ">
+                  <i className="fas fa-heart heart "></i>
+                  <span className="hide-for-small-only"> Following</span>
+                </span>
+              )}
             </div>
           </aside>
           <article className="general__article">

@@ -6,24 +6,13 @@ const Genrelist = ({ onChange, genres }) => {
 
   return (
     <>
-      {/* <li className="genre__radio-btn">
-        <input
-          type="checkbox"
-          value="all"
-          id="all"
-          onChange={(e) => onChange(e.target.value)}
-          onClick={() => setChecked(!checked)}
-          defaultChecked={checked}
-        />
-        <label htmlFor="all">All</label>
-      </li> */}
       {genres.map((genre) => (
         <li className="genre__radio-btn" key={genre}>
           <input
             type="checkbox"
             value={genre}
             id={genre}
-            onChange={(e) => onChange(e.target.value)}
+            onChange={(e) => onChange(e.target.value, !checked)}
             onClick={() => setChecked(!checked)}
             defaultChecked={checked}
           />
