@@ -33,18 +33,25 @@ const Homepage = () => {
     setGenres(getGenresList(request.data));
   }, []);
 
-  const filteredGenre = (genre, isChecked) => {
-    console.log(genre, isChecked);
+  const filteredGenre = (isChecked, genre) => {
     if (isChecked) {
       setSelectedGenre(genre);
-      setGenres([genre]);
-      setTodaysShows(
-        todaysShows.filter((el) => el.show.genres.includes(genre))
-      );
     } else {
-      fetchData();
+      setSelectedGenre('');
     }
   };
+
+  // if(loading) {
+  //   return <Loader />
+  // }
+
+  const getShowsToRender = () => {
+    return selectedGenre
+      ? todaysShows.filter((el) => el.show.genres.includes(selectedGenre))
+      : todaysShows;
+  };
+
+  const showsToRender = getShowsToRender();
 
   useEffect(() => {
     fetchData();
@@ -57,13 +64,14 @@ const Homepage = () => {
       </h1>
       <ul className="genres-list">
         <Genrelist
+          selectedGenre={selectedGenre}
           value={selectedGenre}
           onChange={filteredGenre}
           genres={genres}
         />
       </ul>
       <div className="item-grid">
-        {todaysShows.map((item) => (
+        {showsToRender.map((item) => (
           <Listitem
             key={item.id}
             id={item.show.id}

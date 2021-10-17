@@ -1,9 +1,6 @@
 import './genrelist.css';
-import { useState } from 'react';
 
-const Genrelist = ({ onChange, genres }) => {
-  const [checked, setChecked] = useState(false);
-
+const Genrelist = ({ onChange, selectedGenre, genres }) => {
   return (
     <>
       {genres.map((genre) => (
@@ -12,9 +9,10 @@ const Genrelist = ({ onChange, genres }) => {
             type="checkbox"
             value={genre}
             id={genre}
-            onChange={(e) => onChange(e.target.value, !checked)}
-            onClick={() => setChecked(!checked)}
-            defaultChecked={checked}
+            onChange={(e) => {
+              onChange(e.target.checked, e.target.value);
+            }}
+            checked={selectedGenre === genre}
           />
           <label key={genre} htmlFor={genre}>
             {genre}

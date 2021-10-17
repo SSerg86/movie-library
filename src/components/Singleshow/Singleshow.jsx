@@ -63,7 +63,7 @@ const Singleshow = ({
             />
 
             <div className="aside__button" onClick={addMovieHandler}>
-              {!heartState ? (
+              {heartState ? (
                 <span className="follow-toggle ">
                   <i className="fas fa-heart "></i>
                   <span className="hide-for-small-only"> Follow</span>
